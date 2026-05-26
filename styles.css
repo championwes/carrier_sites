@@ -87,21 +87,22 @@ img { max-width: 100%; display: block; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ---------- Hero ---------- */
-.hero {
-  position: relative; color: #fff;
-  background:
-    linear-gradient(180deg, rgba(14,58,71,.78), rgba(14,58,71,.90)),
-    url("assets/img/highway-sunset.jpg") center 35% / cover no-repeat,
-    var(--deep);
-  overflow: hidden;
+.hero { position: relative; color: #fff; overflow: hidden; background: var(--deep); }
+.hero-bg {
+  position: absolute; top: 0; left: 0;
+  width: 132%; height: 100%; object-fit: cover; object-position: 50% 42%;
+  z-index: 0;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(14,58,71,.94) 26%, rgba(14,58,71,.70) 82%);
 }
 .hero::after {
-  content: ""; position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background-image:
     repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 2px, transparent 2px 28px);
-  pointer-events: none;
 }
-.hero-inner { position: relative; z-index: 1; padding: 92px 24px 104px; max-width: 820px; }
+.hero-inner { position: relative; z-index: 2; padding: 92px 24px 104px; max-width: 820px; }
 .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: .35em; }
 .hero h1 span { color: var(--pop); display: inline-block; }
 .hero-sub { font-size: 1.15rem; color: #d3e3e8; max-width: 640px; }
