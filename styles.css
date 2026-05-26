@@ -89,8 +89,8 @@ img { max-width: 100%; display: block; }
 /* ---------- Hero ---------- */
 .hero { position: relative; color: #fff; overflow: hidden; background: var(--deep); }
 .hero-bg {
-  position: absolute; top: 0; left: 0;
-  width: 132%; height: 100%; object-fit: cover; object-position: 50% 42%;
+  position: absolute; top: 0; left: 22%;
+  width: 135%; height: 100%; object-fit: cover; object-position: 50% 42%;
   z-index: 0;
 }
 .hero::before {
