@@ -15,17 +15,7 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="JBD Transit home">
-        <svg class="logo" viewBox="0 0 300 132" role="img" aria-label="JBD Transit">
-          <defs>
-            <linearGradient id="jbdGrad" x1="0" y1="0" x2="1" y2="0.45">
-              <stop offset="0" stop-color="#0e3a47"/>
-              <stop offset="1" stop-color="#2a96ac"/>
-            </linearGradient>
-          </defs>
-          <text x="0" y="88" font-family="Inter, sans-serif" font-weight="800" font-size="94" letter-spacing="-3" fill="url(#jbdGrad)">JBD</text>
-          <path d="M52 99 C140 96 202 86 251 60 L246 43 L314 72 L244 99 L248 82 C205 96 145 105 60 107 Z" fill="url(#jbdGrad)"/>
-          <text x="4" y="125" font-family="Inter, sans-serif" font-weight="700" font-size="27" letter-spacing="11" fill="#1f7e91">TRANSIT</text>
-        </svg>
+        <img class="logo" src="assets/logo/jbd-transit-logo.png" alt="JBD Transit" width="760" height="341" />
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -35,8 +25,8 @@
       <nav class="site-nav" id="siteNav">
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#fleet">Fleet</a>
         <a href="#safety">Safety</a>
-        <a href="#coverage">Coverage</a>
         <a href="#contact" class="nav-cta">Get a Quote</a>
       </nav>
     </div>
@@ -45,7 +35,6 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-overlay"></div>
       <div class="container hero-inner">
         <p class="eyebrow">Interstate Flatbed &amp; Specialized Carrier &middot; USDOT 3529027</p>
         <h1>Heavy freight, <span>handled right.</span></h1>
@@ -144,24 +133,30 @@
 
     <!-- ABOUT -->
     <section class="section section-alt" id="about">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p class="eyebrow">About JBD Transit</p>
-          <h2>A carrier you can count on</h2>
-          <p>
-            Based in Arab, Alabama, JBD Transit LLC is a for-hire interstate motor carrier
-            registered with the Federal Motor Carrier Safety Administration under
-            USDOT&nbsp;3529027 (MC-1174187). We specialize in flatbed and open-deck freight —
-            the steel, lumber, oilfield equipment and building materials that keep
-            industry moving.
-          </p>
-          <p>
-            We're a focused, owner-operated fleet, not a faceless mega-carrier. That means
-            when you call, you reach people who know your freight, and your load gets the
-            attention it deserves from pickup to delivery.
-          </p>
-          <a href="#contact" class="btn btn-primary">Work With Us</a>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media">
+            <img src="assets/img/truck-branded-dusk.jpg" alt="JBD Transit tractor at dusk" loading="lazy" width="1920" height="1072" />
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">About JBD Transit</p>
+            <h2>A carrier you can count on</h2>
+            <p>
+              Based in Arab, Alabama, JBD Transit LLC is a for-hire interstate motor carrier
+              registered with the Federal Motor Carrier Safety Administration under
+              USDOT&nbsp;3529027 (MC-1174187). We specialize in flatbed and open-deck freight —
+              the steel, lumber, oilfield equipment and building materials that keep
+              industry moving.
+            </p>
+            <p>
+              We're a focused, owner-operated fleet, not a faceless mega-carrier. That means
+              when you call, you reach people who know your freight, and your load gets the
+              attention it deserves from pickup to delivery.
+            </p>
+            <a href="#contact" class="btn btn-primary">Work With Us</a>
+          </div>
         </div>
+
         <div class="stats">
           <div class="stat">
             <span class="stat-num">7</span>
@@ -179,6 +174,37 @@
             <span class="stat-num">0</span>
             <span class="stat-label">Reportable Crashes</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">On the Road</p>
+          <h2>The JBD Transit fleet</h2>
+          <p class="section-lead">
+            Well-maintained equipment and experienced drivers — out working the lanes
+            our customers count on, day and night.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide">
+            <img src="assets/img/truck-branded-grille.jpg" alt="JBD Transit tractor front detail" loading="lazy" width="1920" height="1072" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/driver-portrait.jpg" alt="JBD Transit professional driver" loading="lazy" width="1920" height="1072" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/forest-road.jpg" alt="Tractor-trailer on a forest highway" loading="lazy" width="1920" height="1072" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/img/driver-wheel.jpg" alt="Driver at the wheel on the open road" loading="lazy" width="1920" height="1072" />
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="assets/img/wheel-detail.jpg" alt="Polished truck wheel detail" loading="lazy" width="1920" height="1072" />
+          </figure>
         </div>
       </div>
     </section>
@@ -261,9 +287,9 @@
             <li>Long-haul &amp; recurring flatbed lanes</li>
           </ul>
         </div>
-        <div class="coverage-map" aria-hidden="true">
-          <div class="map-pin">📍</div>
-          <span class="map-caption">Headquartered in Arab, Alabama</span>
+        <div class="coverage-photo">
+          <img src="assets/img/highway-golden.jpg" alt="JBD Transit truck on an open highway" loading="lazy" width="1920" height="1072" />
+          <span class="coverage-badge">📍 Arab, Alabama</span>
         </div>
       </div>
     </section>
@@ -338,16 +364,13 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <svg class="logo" viewBox="0 0 300 132" role="img" aria-label="JBD Transit">
-          <text x="0" y="88" font-family="Inter, sans-serif" font-weight="800" font-size="94" letter-spacing="-3" fill="#ffffff">JBD</text>
-          <path d="M52 99 C140 96 202 86 251 60 L246 43 L314 72 L244 99 L248 82 C205 96 145 105 60 107 Z" fill="#5cc6d8"/>
-          <text x="4" y="125" font-family="Inter, sans-serif" font-weight="700" font-size="27" letter-spacing="11" fill="#7ecdda">TRANSIT</text>
-        </svg>
+        <img class="logo" src="assets/logo/jbd-transit-logo-white.png" alt="JBD Transit" width="760" height="341" />
         <p>Interstate flatbed &amp; specialized freight, hauled safely across the country.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#fleet">Fleet</a>
         <a href="#safety">Safety</a>
         <a href="#coverage">Coverage</a>
         <a href="#contact">Contact</a>

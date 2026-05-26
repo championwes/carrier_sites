@@ -90,8 +90,8 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative; color: #fff;
   background:
-    linear-gradient(180deg, rgba(14,58,71,.80), rgba(14,58,71,.93)),
-    radial-gradient(1200px 500px at 70% -10%, #1c6c83 0%, transparent 60%),
+    linear-gradient(180deg, rgba(14,58,71,.78), rgba(14,58,71,.90)),
+    url("assets/img/highway-sunset.jpg") center 35% / cover no-repeat,
     var(--deep);
   overflow: hidden;
 }
@@ -143,11 +143,15 @@ img { max-width: 100%; display: block; }
 .card p { margin: 0; color: var(--muted); font-size: .98rem; }
 
 /* ---------- About ---------- */
-.about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: center; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.about-media img {
+  width: 100%; height: 100%; max-height: 420px; object-fit: cover;
+  border-radius: 18px; box-shadow: var(--shadow-lg);
+}
 .about-copy h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); color: var(--deep); }
 .about-copy p { color: var(--muted); }
 .about-copy .btn { margin-top: .6rem; }
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; margin-top: 2.6rem; }
 .stat {
   background: var(--deep); color: #fff; border-radius: var(--radius);
   padding: 1.6rem 1.3rem; text-align: center;
@@ -156,6 +160,19 @@ img { max-width: 100%; display: block; }
 .stat-num { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 2.7rem; line-height: 1; }
 .stat-label { font-size: .85rem; color: #bcd1d8; letter-spacing: .03em; }
 .stat:nth-child(4) .stat-label { color: #cdeef4; }
+
+/* ---------- Gallery ---------- */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px; gap: 1.1rem;
+}
+.gallery-item { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.gallery-item.gallery-wide { grid-column: span 2; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
 
 /* ---------- Safety ---------- */
 .safety-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-bottom: 3rem; }
@@ -180,20 +197,14 @@ img { max-width: 100%; display: block; }
 .coverage-list { list-style: none; padding: 0; margin: 1.4rem 0 0; }
 .coverage-list li { padding: .55rem 0 .55rem 1.9rem; position: relative; color: #e3eef1; border-bottom: 1px solid rgba(255,255,255,.1); }
 .coverage-list li::before { content: "✓"; position: absolute; left: 0; color: var(--pop); font-weight: 700; }
-.coverage-map {
-  background: linear-gradient(135deg, var(--deep-2), #08303b);
-  border: 1px solid rgba(255,255,255,.12); border-radius: 18px;
-  min-height: 280px; display: grid; place-content: center; text-align: center; gap: .8rem;
-  position: relative; overflow: hidden;
+.coverage-photo { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-lg); }
+.coverage-photo img { width: 100%; height: 100%; min-height: 300px; max-height: 420px; object-fit: cover; display: block; }
+.coverage-badge {
+  position: absolute; left: 16px; bottom: 16px;
+  background: rgba(14,58,71,.85); color: #fff; font-weight: 600; font-size: .9rem;
+  padding: .5rem .9rem; border-radius: 999px; backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.18);
 }
-.coverage-map::before {
-  content: ""; position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
-  background-size: 22px 22px; opacity: .5;
-}
-.map-pin { font-size: 3.5rem; position: relative; animation: bob 2.6s ease-in-out infinite; }
-.map-caption { position: relative; color: #c3d7dd; font-weight: 500; }
-@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 3.5rem; align-items: start; }
@@ -241,7 +252,11 @@ img { max-width: 100%; display: block; }
   .safety-stats { grid-template-columns: repeat(2, 1fr); }
   .safety-grid { grid-template-columns: repeat(2, 1fr); }
   .strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+  .gallery-item.gallery-wide { grid-column: span 2; }
   .about-grid, .coverage-inner, .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .about-media img { max-height: 340px; }
 }
 
 @media (max-width: 720px) {
@@ -261,6 +276,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 520px) {
   .card-grid, .safety-stats, .safety-grid, .strip-inner, .stats, .field-row { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .gallery-item.gallery-wide { grid-column: span 1; }
   .hero-inner { padding: 64px 24px 72px; }
   .hero-trust { gap: 1.4rem; }
 }
